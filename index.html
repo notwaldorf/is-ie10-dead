@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IE10 💀countdown</title>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+  </head>
+
+  <style>
+    body {
+      background-color: #F5F5F5;
+      font-family: "Lato", sans-serif;
+      padding-top: 50px;
+    }
+
+    .💀{
+      text-align: center;
+      font-weight: 300;
+      font-size: 40px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+
+      -webkit-flex-flow: row wrap;
+      justify-content: space-around;
+
+      width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 50px;
+    }
+
+    li {
+      text-align: center;
+      float: left;
+    }
+
+    #days, #hours, #minutes, #seconds {
+      font-size: 80px;
+      font-weight: 700;
+      background-color: white;
+      color: #E91E63;
+      vertical-align: center;
+
+      height: 100px;
+      width: 100px;
+
+      border-radius: 8px;
+      box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), inset 2px 4px 0 0 rgba(255, 255, 255, 0.08);
+    }
+
+    /* UGH */
+    #seconds {
+      margin-right: 0;
+    }
+
+    /* Thanks Chrome for the bold emoji bug */
+    #days.💀, #hours.💀, #minutes.💀, #seconds.💀 {
+      font-weight: normal;
+    }
+    .📇{
+      font-size: 12px;
+      padding-top: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+  </style>
+
+  <body>
+    <div class="💀">Countdown to IE10 💀</div>
+    <ul class="countdown">
+      <li>
+        <div id="days"></div>
+        <div class="📇">days</div>
+      </li>
+      <li>
+        <div id="hours"></div>
+        <div class="📇">hours</div>
+      </li>
+      <li>
+        <div id="minutes"></div>
+        <div class="📇">minutes</div>
+      </li>
+      <li>
+        <div id="seconds"></div>
+        <div class="📇">seconds</div>
+      </li>
+    </ul>
+
+  </body>
+
+  <script>
+    var death = new Date("January 12 2016").getTime() + (1000*3600*48);
+
+    var days = document.getElementById('days');
+    var hours = document.getElementById('hours');
+    var minutes = document.getElementById('minutes');
+    var seconds = document.getElementById('seconds');
+
+
+    tick();
+
+    setInterval(function () { tick(); }, 1000);
+
+    function tick() {
+      var now = new Date().getTime();
+      var secondsLeft = (death-now) / 1000;
+
+      if (secondsLeft < 0) {
+        days.innerHTML = hours.innerHTML = minutes.innerHTML = seconds.innerHTML = '💀';
+        days.className = hours.className = minutes.className = seconds.className = '💀';
+        return;
+      }
+
+      var secondsInAMinute = 60;
+      var secondsInAnHour = 60 * secondsInAMinute;
+      var secondsInADay = secondsInAnHour * 24;
+
+      days.innerHTML = pad(parseInt(secondsLeft / secondsInADay));
+      secondsLeft = secondsLeft % secondsInADay;
+
+      hours.innerHTML = pad(parseInt(secondsLeft / secondsInAnHour));
+      secondsLeft = secondsLeft % secondsInAnHour;
+
+      minutes.innerHTML = pad(parseInt(secondsLeft / secondsInAMinute));
+      seconds.innerHTML = pad(parseInt( secondsLeft % secondsInAMinute));
+    }
+
+    function pad(n) {
+      return (n < 10 ? '0' : '') + n;
+    }
+
+  </script>
+
+</html>
