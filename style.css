@@ -1,0 +1,88 @@
+body {
+  background-color: #ECEFF1;
+  font-family: "Lato", sans-serif;
+  padding-top: 50px;
+}
+
+.💀{
+  text-align: center;
+  font-weight: 300;
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+}
+
+li {
+  text-align: center;
+  float: left;
+}
+
+#days, #hours, #minutes, #seconds {
+  font-size: 80px;
+  font-weight: 700;
+  background-color: white;
+  color: #E91E63;
+  vertical-align: center;
+
+  height: 100px;
+  width: 100px;
+
+  border-radius: 8px;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), inset 2px 4px 0 0 rgba(255, 255, 255, 0.08);
+}
+
+/* UGH */
+#seconds {
+  margin-right: 0;
+}
+
+/* Thanks Chrome for the bold emoji bug */
+#days.💀, #hours.💀, #minutes.💀, #seconds.💀 {
+  font-weight: normal;
+}
+.📇{
+  font-size: 12px;
+  padding-top: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.pink {
+  color: #E91E63;
+}
+
+.footer {
+  width: 500px;
+  margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+  border-top: 2px solid #E91E63;
+  text-align: center;
+  text-transform: uppercase;
+}
+.footer p {
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: .2em;
+  padding-right: 6px;
+}
