@@ -6,9 +6,10 @@ body {
 
 .💀{
   text-align: center;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 40px;
   text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 ul {
