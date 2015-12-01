@@ -1,5 +1,5 @@
 body {
-  background-color: #ECEFF1;
+  background-color: #E8EAF6;
   font-family: "Lato", sans-serif;
   padding-top: 50px;
 }
@@ -81,16 +81,53 @@ li {
   width: 500px;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 20px;
+  margin-top: 40px;
   text-align: center;
-  font-size: 13px;
 }
 
 .footer {
-  margin-top: 80px;
+  padding-top: 20px;
   border-top: 2px solid #E91E63;
   text-transform: uppercase;
   font-size: 10px;
   letter-spacing: .2em;
   padding-right: 6px;
+}
+
+.footer a:link, .footer a:visited {
+  color: #E91E63;
+}
+
+#info {
+  width: 100%;
+  display: none;
+  color: white;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+#info a:link, #info a:visited {
+  color: white;
+}
+
+.btn {
+  background: #E91E63;
+  padding: 10px;
+  font-size: 12px;
+  border-radius: 3px;
+  text-decoration: none;
+  letter-spacing: 1px;
+  color: #666;
+  display: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.btn .text {
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.btn:hover #info {
+  display: block;
 }

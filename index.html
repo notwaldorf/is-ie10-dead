@@ -32,15 +32,23 @@
         <div class="📇">seconds</div>
       </li>
     </ul>
-    <br>
-    <div class="text-chunk"><b>Note</b>: As of
-      <a href="https://support.microsoft.com/en-us/lifecycle/search?sort=PN&alpha=internet%20explorer">
-      January 12, 2016</a>, only the "most current version of IE available for a supported operating
-      system will receive technical support and security updates", and according to the
-      <a href="https://support.microsoft.com/en-us/gp/microsoft-internet-explorer">IE Lifecycle support</a>
-      page, IE10 will be the most current version only on pre-RC2 Windows Server 2012, and
-      Windows Embedded 8 Standard.<br><br>
-      You might <i>toooootally</i> have to support zombie IE10.</div>
+
+    <div class="text-chunk">
+      <span class="btn" style="display: inline-block;">
+        <span class="text">The fine print</span>
+        <div id="info">
+          <br>
+          As of <a href="https://support.microsoft.com/en-us/lifecycle/search?sort=PN&alpha=internet%20explorer">
+          January 12, 2016</a>, only the "most current version of IE available for a supported operating
+          system will receive technical support and security updates", and according to the
+          <a href="https://support.microsoft.com/en-us/gp/microsoft-internet-explorer">IE Lifecycle support</a>
+          page, IE10 will be the most current version only on pre-RC2 Windows Server 2012, and
+          Windows Embedded 8 Standard.<br><br>
+          You might <i>toooootally</i> have to support zombie IE10.
+        </div>
+      </span>
+  </div>
+
     <div class="footer text-chunk">
       <p class="small">made with <span class="pink">❤︎</span> by <a href="https://twitter.com/notwaldorf">monica</a>.
       find this on <a href="https://github.com/notwaldorf/is-ie10-dead">github</a></p>
@@ -57,7 +65,7 @@
 
     tick();
 
-    setInterval(function () {
+    var tock = setInterval(function () {
       tick();
     }, 1000);
 
@@ -68,6 +76,7 @@
       if (secondsLeft < 0) {
         days.innerHTML = hours.innerHTML = minutes.innerHTML = seconds.innerHTML = '🎉';
         days.className = hours.className = minutes.className = seconds.className = '💀';
+        clearInterval(tock);
         return;
       }
 
