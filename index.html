@@ -44,7 +44,7 @@
 
     tick();
 
-    setInterval(function () {
+    var tock = setInterval(function () {
       tick();
     }, 1000);
 
@@ -55,6 +55,7 @@
       if (secondsLeft < 0) {
         days.innerHTML = hours.innerHTML = minutes.innerHTML = seconds.innerHTML = '🎉';
         days.className = hours.className = minutes.className = seconds.className = '💀';
+        clearInterval(tock);
         return;
       }
 
