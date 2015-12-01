@@ -12,6 +12,11 @@ body {
   letter-spacing: 2px;
 }
 
+.💀 .little {
+  font-size: 15px;
+  display: block;
+}
+
 ul {
   padding: 0;
   margin: 0;
@@ -72,17 +77,18 @@ li {
   color: #E91E63;
 }
 
-.footer {
+.text-chunk {
   width: 500px;
-  margin-top: 80px;
   margin-left: auto;
   margin-right: auto;
   padding-top: 20px;
-  border-top: 2px solid #E91E63;
   text-align: center;
-  text-transform: uppercase;
+  font-size: 13px;
 }
-.footer p {
+
+.footer {
+  margin-top: 80px;
+  border-top: 2px solid #E91E63;
   text-transform: uppercase;
   font-size: 10px;
   letter-spacing: .2em;
