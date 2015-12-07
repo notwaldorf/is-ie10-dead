@@ -127,6 +127,7 @@ li {
   color: white;
   text-transform: uppercase;
   font-weight: bold;
+  text-decoration: none;
 }
 .btn:hover #info {
   display: block;
