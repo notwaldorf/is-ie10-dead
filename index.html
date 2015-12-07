@@ -10,33 +10,35 @@
   </head>
   <body>
     <div class="container">
-    <div class="💀">
+    <div class="💀" tabindex="0">
       <span style="font-weight:normal">💀</span> When is IE10 dead? <span style="font-weight:normal">💀</span>
     </div>
 
-    <ul>
-      <li>
-        <div id="days"></div>
-        <div class="📇">days</div>
-      </li>
-      <li>
-        <div id="hours"></div>
-        <div class="📇">hours</div>
-      </li>
-      <li>
-        <div id="minutes"></div>
-        <div class="📇">minutes</div>
-      </li>
-      <li>
-        <div id="seconds"></div>
-        <div class="📇">seconds</div>
-      </li>
-    </ul>
+    <div tabindex="0" id="countdown">
+      <ul>
+        <li>
+          <div id="days"></div>
+          <div class="📇">days</div>
+        </li>
+        <li>
+          <div id="hours"></div>
+          <div class="📇">hours</div>
+        </li>
+        <li>
+          <div id="minutes"></div>
+          <div class="📇">minutes</div>
+        </li>
+        <li>
+          <div id="seconds"></div>
+          <div class="📇">seconds</div>
+        </li>
+      </ul>
+    </div>
 
     <div class="text-chunk">
       <div class="btn" style="display: inline-block;">
         <a href="#fine-print" class="text">The fine print</a>
-        <div id="info">
+        <div id="info" tabindex="0">
           <br>
           As of <a href="https://support.microsoft.com/en-us/lifecycle/search?sort=PN&alpha=internet%20explorer">
           January 12, 2016</a>, only the "most current version of IE available for a supported operating
@@ -102,6 +104,11 @@
 
       minutes.innerHTML = pad(parseInt(secondsLeft / secondsInAMinute));
       seconds.innerHTML = pad(parseInt( secondsLeft % secondsInAMinute));
+
+      document.getElementById('countdown').setAttribute('aria-label',
+          'IE10 is dead in ' +
+          days.innerHTML + ' days ' + hours.innerHTML + ' hours ' +
+          minutes.innerHTML + ' minutes ' + seconds.innerHTML);
     }
 
     function pad(n) {
