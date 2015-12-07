@@ -133,6 +133,7 @@ li {
   font-weight: bold;
   text-decoration: none;
 }
-.btn:hover #info {
+.btn:hover #info,
+.btn:focus #info {
   display: block;
 }
